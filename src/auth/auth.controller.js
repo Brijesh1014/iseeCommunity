@@ -15,7 +15,6 @@ const register = async (req, res) => {
       lastName ,
       email,
       phoneNumber,
-      username,
       password,
       country,
       state,
@@ -46,7 +45,6 @@ const register = async (req, res) => {
       firstName,
       lastName,
       email,
-      username,
       password: hashedPassword,
       country,
       state,
@@ -104,7 +102,7 @@ const verifyEmail = async (req, res) => {
     await user.save();
     if(user.isEmailVerified){
       await sentEmail(
-        "https://iseeCommunity-backend.vercel.app/api/auth/login",
+        "https://isee-community-backend.vercel.app/api/auth/login",
         "iseeCommunity",       
         name,          
         user.email,
